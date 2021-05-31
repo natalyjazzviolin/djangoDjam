@@ -1,0 +1,213 @@
+html,
+body,
+div,
+span,
+a,
+h1,
+h2,
+h3,
+p,
+img,
+body,
+main,
+input,
+button,
+footer {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  list-style: none;
+  border: 0;
+  background-color: black;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0);
+}
+
+a {
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+#container {
+  height: 85vh;
+
+  width: 100vw;
+  display: flex;
+  place-items: center;
+  place-content: center;
+
+  justify-content: space-between;
+  flex-direction: column;
+  background-image: url(./img/django-app.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  color: white;
+}
+
+#container::after {
+  content: "";
+  background-image: url(./img/django-cig-app.png);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  z-index: 2;
+}
+
+.difficulty {
+  border-bottom: 4px solid white;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.25em;
+  margin: 1em auto;
+  position: relative;
+  width: 20em;
+  background: none;
+  /* text-align: center; */
+  /* display: flex; */
+  /* place-items: center; */
+}
+
+.difficulty::after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.difficulty input[type="radio"] {
+  display: none;
+}
+
+.difficulty label {
+  color: #bebebe;
+  float: left;
+  width: 33%;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.5s;
+  text-shadow: -1px -1px 0 black;
+  font-size: 25px;
+  margin-bottom: 1vh;
+  margin-top: 5vh;
+}
+
+.difficulty input:checked + label {
+  color: white;
+}
+
+.difficulty label:last-of-type::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  border: 0.6em solid transparent;
+  border-top-width: 0;
+  border-bottom-color: red;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  margin-left: -0.6em;
+  transition: left 0.5s;
+}
+
+.difficulty input:checked:nth-of-type(1) ~ label:last-of-type::after {
+  left: 16.333333333333332%;
+}
+.difficulty input:checked:nth-of-type(2) ~ label:last-of-type::after {
+  left: 50%;
+}
+.difficulty input:checked:nth-of-type(3) ~ label:last-of-type::after {
+  left: 82.557%;
+}
+
+#djam {
+  display: inline-block;
+  color: white;
+  background-color: black;
+  border: 0.3em solid white;
+  border-radius: 5%;
+  padding: 2vh 15vw;
+  margin-top: 45vh;
+  font-size: 25px;
+  font-family: Limelight;
+}
+
+#djam:active {
+  transform: translateY(4px);
+}
+
+#tune {
+  height: 10vh;
+  margin-top: 5vh;
+  font-size: 30px;
+  max-width: 80%;
+  text-align: center;
+  font-family: Limelight;
+}
+
+footer {
+  display: flex;
+  place-items: center;
+  place-content: center;
+  flex-direction: column;
+  color: white;
+  margin-top: auto;
+  margin-bottom: 2vh;
+}
+
+@media only screen and (max-height: 568px) {
+  #djam {
+    margin-top: 40vh;
+  }
+
+  #tune {
+    margin-top: 3vh;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  #djam {
+    margin-top: 50vh;
+    font-size: 35px;
+  }
+
+  #tune {
+    margin-top: 7vh;
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  #container {
+    max-width: 500px;
+    background-size: contain;
+  }
+
+  #djam {
+    display: inline-block;
+    color: white;
+    background-color: black;
+    border: 0.3em solid white;
+    border-radius: 5%;
+    padding: 20px 60px;
+    margin-top: 45vh;
+    font-size: 25px;
+  }
+
+  body {
+    place-items: center;
+  }
+}
